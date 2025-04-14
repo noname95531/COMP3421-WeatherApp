@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+
+
+.grid {
+  display: flex;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  max-width: 100%;
+  /* width: 300px;
+  height: 300px; */
+  align-items: center;
+  justify-content: center;
+}
+
+.city_weather_div {
+  display: flex;
+  display: flex;
+  flex-direction: column;
+}
+
+.city_weather_div p {
+  text-wrap: nowrap;
+
+}
+
+.forecast_card {
+  border: rgb(0, 183, 255) 2px solid;
+  border-radius: 10px;
+  width: 15em;
+  height: auto;
+}
+
+.weather_details_div {
+  border: rgb(0, 183, 255) 2px solid;
+  border-radius: 10px;
+}
+
+.weather_info_div {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.weather_info_div p {
+  font-size: 20px;
+  padding-left: 50px;
+}
+
+.return_button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 5px;
+  background-color: aquamarine;
+}
