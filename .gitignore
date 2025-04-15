@@ -1,0 +1,24 @@
+# Node dependencies
+node_modules/
+
+# Build output
+/build
+/functions/lib
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# System files
+.DS_Store
+.env
+.env.local
+.env.production
+.env.development
+
+# VS Code settings (optional)
+.vscode/
+
+# Firebase cache
+.firebase/
