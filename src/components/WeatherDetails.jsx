@@ -17,7 +17,7 @@ const WeatherDetails = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const { day } = location.state || {};
-    logEvent(analytics, "page_" + location + "_weatherDetail");
+    logEvent(analytics, "page_weatherDetail");
     if (!day) {
         return (
             <div>
