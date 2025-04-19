@@ -6,7 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 import WeatherDetails from './components/WeatherDetails';
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { getAnalytics, logEvent } from "firebase/analytics";
 const firebaseConfig = {
   apiKey: "AIzaSyDFAQ6omLSUsSWA81l_LSVi83KuRT9NXls",
   authDomain: "comp3421-weather-app.firebaseapp.com",

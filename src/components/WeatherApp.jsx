@@ -3,7 +3,20 @@ import axios from 'axios';
 import CurrentWeather from './CurrentWeather';
 import ForecastCard from './ForecastCard';
 import CityWeather from './CityWeather';
-
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics, logEvent } from "firebase/analytics";
+const firebaseConfig = {
+    apiKey: "AIzaSyDFAQ6omLSUsSWA81l_LSVi83KuRT9NXls",
+    authDomain: "comp3421-weather-app.firebaseapp.com",
+    projectId: "comp3421-weather-app",
+    storageBucket: "comp3421-weather-app.firebasestorage.app",
+    messagingSenderId: "1095568196995",
+    appId: "1:1095568196995:web:14289d60f69581238c62b6",
+    measurementId: "G-29QQ7SQJ4M"
+};
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 const WeatherApp = () => {
     const [forecast, setForecast] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -64,6 +77,7 @@ const WeatherApp = () => {
                     <ForecastCard key={index} day={day} />
                 ))}
             </div>
+            <button onClick={() => { logEvent(analytics, "testtest"); }}>test</button>
             <CityWeather />
         </div>
     );
