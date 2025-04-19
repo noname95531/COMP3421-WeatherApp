@@ -41,6 +41,7 @@ const WeatherApp = () => {
                 setError('Failed to fetch forecast data');
                 console.error(err);
             } finally {
+                logEvent(analytics, "page_main");
                 setLoading(false);
             }
         };

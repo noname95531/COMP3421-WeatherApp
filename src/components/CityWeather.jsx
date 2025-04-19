@@ -1,6 +1,5 @@
 import { useState } from "react";
 import axios from "axios";
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics, logEvent } from "firebase/analytics";
 const firebaseConfig = {
@@ -30,7 +29,7 @@ const CityWeather = () => {
         setLoading(true);
         setError(null);
         setWeather(null);
-        logEvent(analytics, cityName);
+        logEvent(analytics, "search_" + cityName);
         try {
             const response = await axios.get(
                 'https://api.openweathermap.org/data/2.5/weather',
