@@ -1,5 +1,19 @@
 import { useState } from "react";
 import axios from "axios";
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics, logEvent } from "firebase/analytics";
+const firebaseConfig = {
+    apiKey: "AIzaSyDFAQ6omLSUsSWA81l_LSVi83KuRT9NXls",
+    authDomain: "comp3421-weather-app.firebaseapp.com",
+    projectId: "comp3421-weather-app",
+    storageBucket: "comp3421-weather-app.firebasestorage.app",
+    messagingSenderId: "1095568196995",
+    appId: "1:1095568196995:web:14289d60f69581238c62b6",
+    measurementId: "G-29QQ7SQJ4M"
+};
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 const CityWeather = () => {
     const [cityName, setcityName] = useState('');
     const [weather, setWeather] = useState(null);
@@ -16,7 +30,7 @@ const CityWeather = () => {
         setLoading(true);
         setError(null);
         setWeather(null);
-
+        logEvent(analytics, cityName);
         try {
             const response = await axios.get(
                 'https://api.openweathermap.org/data/2.5/weather',
@@ -52,7 +66,7 @@ const CityWeather = () => {
                         value={cityName}
                         onChange={(e) => setcityName(e.target.value)}
                         placeholder="Enter City ID (e.g., London)"
-                        
+
                     />
                     <button
                         type="submit"
@@ -86,7 +100,7 @@ const CityWeather = () => {
                             </p>
                         </div>
                         <div className="flex">
-                            
+
                         </div>
                     </div>
                 </div>
