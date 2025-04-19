@@ -78,7 +78,6 @@ const WeatherApp = () => {
                     <ForecastCard key={index} day={day} />
                 ))}
             </div>
-            <button onClick={() => { logEvent(analytics, "testtest"); }}>test</button>
             <CityWeather />
         </div>
     );
