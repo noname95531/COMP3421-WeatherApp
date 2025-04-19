@@ -6,6 +6,7 @@ import CityWeather from './CityWeather';
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics, logEvent } from "firebase/analytics";
+import { getPerformance } from "firebase/performance";
 const firebaseConfig = {
     apiKey: "AIzaSyDFAQ6omLSUsSWA81l_LSVi83KuRT9NXls",
     authDomain: "comp3421-weather-app.firebaseapp.com",
@@ -17,6 +18,8 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+// Initialize Performance Monitoring and get a reference to the service
+const perf = getPerformance(app);
 const WeatherApp = () => {
     const [forecast, setForecast] = useState([]);
     const [loading, setLoading] = useState(true);
